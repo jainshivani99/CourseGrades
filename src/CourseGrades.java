@@ -1,15 +1,17 @@
+import java.util.Arrays;
+
 public class CourseGrades {
 
     private int CRN;
-    private String subject;
-    private int number;
-    private String title;
-    private String section;
-    private String type;
-    private int term;
-    private String instructor;
-    private int[] grades;
-    private double average;
+    private String Subject;
+    private int Number;
+    private String Title;
+    private String Section;
+    private String Type;
+    private int Term;
+    private String Instructor;
+    private int[] Grades;
+    private double Average;
 
     public CourseGrades() {
     }
@@ -19,38 +21,38 @@ public class CourseGrades {
     }
 
     public String getSubject() {
-        return subject;
+        return Subject;
     }
 
     public int getNumber() {
-        return number;
+        return Number;
     }
 
     public String getTitle() {
-        return title;
+        return Title;
     }
 
     public String getSection() {
-        return section;
+        return Section;
     }
 
     public String getType() {
-        return type;
+        return Type;
     }
 
     public int getTerm() {
-        return term;
+        return Term;
     }
 
     public String getInstructor() {
-        return instructor;
+        return Instructor;
     }
 
     public int[] getGrades() {
-        return grades;
+        return Grades;
     }
 
     public double getAverage() {
-        return average;
+        return Average;
     }
 }

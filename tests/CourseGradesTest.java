@@ -25,7 +25,7 @@ public class CourseGradesTest {
 
     @Test
     public void getCRN() {
-        System.out.println(COURSE_JSON);
+        //System.out.println(COURSE_JSON);
         Gson gson = new Gson();
         CourseGrades myCourseGrades = gson.fromJson(COURSE_JSON,CourseGrades.class);
         assertEquals(41758, myCourseGrades.getCRN());
@@ -80,17 +80,19 @@ public class CourseGradesTest {
         assertEquals("Arai, Sayuri", myCourseGrades.getInstructor());
     }
 
-    /**@Test
+    @Test
     public void getGrades() {
         Gson gson = new Gson();
-        CourseGrades courseGrades = gson.fromJson(COURSE_JSON,CourseGrades.class);
-        assertEquals(Arrays.toString(6, 16, 5, 3, 2, 3, 0, 0, 0, 0, 0, 0, 0, 0), CourseGrades.getGrades());
-    }*/
+        CourseGrades myCourseGrades = gson.fromJson(COURSE_JSON,CourseGrades.class);
+        int[] expectedResult = {6, 16, 5, 3, 2, 3, 0, 0, 0, 0, 0, 0, 0, 0};
+        boolean equals = Arrays.equals(expectedResult, myCourseGrades.getGrades());
+        assertEquals(equals, true);
+    }
 
     @Test
     public void getAverage() {
         Gson gson = new Gson();
         CourseGrades myCourseGrades = gson.fromJson(COURSE_JSON,CourseGrades.class);
-        assertEquals(3.72, myCourseGrades.getAverage());
+        assertEquals(3.72, myCourseGrades.getAverage(), 0);
     }
 }
