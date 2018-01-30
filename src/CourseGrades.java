@@ -1,5 +1,4 @@
-import java.util.Arrays;
-
+/**A class that represents a course grade object parsed from the JSON file. */
 public class CourseGrades {
 
     private int CRN;
