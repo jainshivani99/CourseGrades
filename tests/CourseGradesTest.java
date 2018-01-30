@@ -10,12 +10,6 @@ public class CourseGradesTest {
 
     private static final String COURSE_JSON = "{ \"CRN\": 41758, \"Subject\": \"AAS\", \"Number\": 100, \"Title\": \"Intro Asian American Studies\", \"Section\": \"AD1\", \"Type\": \"DIS\", \"Term\": 120138, \"Instructor\": \"Arai, Sayuri\", \"Grades\": [6, 16, 5, 3, 2, 3, 0, 0, 0, 0, 0, 0, 0, 0], \"Average\": 3.72 }";
     private CourseGrades myCourseGrades;
-    /**private static final String COURSE_ARRAY_JSON = "{CRN": 47100, "Subject": "AAS", "Number": 100, "Title":
-            "Intro Asian American Studies", "Section": "AD2", "Type": "DIS", "Term": 120138, "Instructor": "Arai, Sayuri",
-            "Grades": [6, 11, 4, 5, 6, 1, 0, 0, 0, 0, 0, 0, 0, 0], "Average": 3.64 },
-        { "CRN": 47102, "Subject": "AAS", "Number": 100, "Title": "Intro Asian American Studies", "Section": "AD3",
-        "Type": "DIS", "Term": 120138, "Instructor": "Davis, Thomas E", "Grades": [2, 24, 1, 2, 4, 1, 1, 0, 0, 0, 0, 0, 0, 0],
-        "Average": 3.75 }";*/
 
     @Before
     public void setUp() throws Exception {
