@@ -1,56 +1,56 @@
 public class CourseGrades {
 
-    private static int CRN;
-    private static String subject;
-    private static int number;
-    private static String title;
-    private static String section;
-    private static String type;
-    private static int term;
-    private static String instructor;
-    private static int[] grades;
-    private static double average;
+    private int CRN;
+    private String subject;
+    private int number;
+    private String title;
+    private String section;
+    private String type;
+    private int term;
+    private String instructor;
+    private int[] grades;
+    private double average;
 
     public CourseGrades() {
     }
 
-    public static int getCRN() {
+    public int getCRN() {
         return CRN;
     }
 
-    public static String getSubject() {
+    public String getSubject() {
         return subject;
     }
 
-    public static int getNumber() {
+    public int getNumber() {
         return number;
     }
 
-    public static String getTitle() {
+    public String getTitle() {
         return title;
     }
 
-    public static String getSection() {
+    public String getSection() {
         return section;
     }
 
-    public static String getType() {
+    public String getType() {
         return type;
     }
 
-    public static int getTerm() {
+    public int getTerm() {
         return term;
     }
 
-    public static String getInstructor() {
+    public String getInstructor() {
         return instructor;
     }
 
-    public static int[] getGrades() {
+    public int[] getGrades() {
         return grades;
     }
 
-    public static double getAverage() {
+    public double getAverage() {
         return average;
     }
 }
