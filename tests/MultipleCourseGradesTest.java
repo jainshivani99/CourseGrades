@@ -40,38 +40,56 @@ public class MultipleCourseGradesTest {
 
     @Test
     public void getTitle() {
-        assertEquals("Intro Asian American Studies", myCourseGrades.getTitle());
+        assertEquals("Intro Asian American Studies", myCourseGrades[0].getTitle());
+        assertEquals("Intro Asian American Studies", myCourseGrades[1].getTitle());
+        assertEquals("Intro Asian American Studies", myCourseGrades[2].getTitle());
     }
 
     @Test
     public void getSection() {
-        assertEquals("AD1", myCourseGrades.getSection());
+        assertEquals("AD2", myCourseGrades[0].getSection());
+        assertEquals("AD3", myCourseGrades[1].getSection());
+        assertEquals("AD4", myCourseGrades[2].getSection());
     }
 
     @Test
     public void getType() {
-        assertEquals("DIS", myCourseGrades.getType());
+        assertEquals("DIS", myCourseGrades[0].getType());
+        assertEquals("DIS", myCourseGrades[1].getType());
+        assertEquals("DIS", myCourseGrades[2].getType());
     }
 
     @Test
     public void getTerm() {
-        assertEquals(120138, myCourseGrades.getTerm());
+        assertEquals(120138, myCourseGrades[0].getTerm());
+        assertEquals(120138, myCourseGrades[1].getTerm());
+        assertEquals(120138, myCourseGrades[2].getTerm());
     }
 
     @Test
     public void getInstructor() {
-        assertEquals("Arai, Sayuri", myCourseGrades.getInstructor());
+        assertEquals("Arai, Sayuri", myCourseGrades[0].getInstructor());
+        assertEquals("Davis, Thomas E", myCourseGrades[1].getInstructor());
+        assertEquals("Davis, Thomas E", myCourseGrades[2].getInstructor());
     }
 
     @Test
     public void getGrades() {
-        int[] expectedResult = {6, 16, 5, 3, 2, 3, 0, 0, 0, 0, 0, 0, 0, 0};
-        boolean equals = Arrays.equals(expectedResult, myCourseGrades.getGrades());
-        assertEquals(equals, true);
+        int[] expectedResult0 = {6, 11, 4, 5, 6, 1, 0, 0, 0, 0, 0, 0, 0, 0};
+        int[] expectedResult1 = {2, 24, 1, 2, 4, 1, 1, 0, 0, 0, 0, 0, 0, 0};
+        int[] expectedResult2 = {7, 16, 4, 4, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0};
+        boolean equals0 = Arrays.equals(expectedResult0, myCourseGrades[0].getGrades());
+        boolean equals1 = Arrays.equals(expectedResult1, myCourseGrades[1].getGrades());
+        boolean equals2 = Arrays.equals(expectedResult2, myCourseGrades[2].getGrades());
+        assertEquals(equals0, true);
+        assertEquals(equals1, true);
+        assertEquals(equals2, true);
     }
 
     @Test
     public void getAverage() {
-        assertEquals(3.72, myCourseGrades.getAverage(), 0);
+        assertEquals(3.64, myCourseGrades[0].getAverage(), 0);
+        assertEquals(3.75, myCourseGrades[1].getAverage(), 0);
+        assertEquals(3.71, myCourseGrades[2].getAverage(), 0);
     }
 }
