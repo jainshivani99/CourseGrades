@@ -33,6 +33,6 @@ public class AggregationMethodsTest {
     //Tests for function gpaMeanByCourse, Returns mean of weighted means
     @Test
     public void tesGpaMeanByCourse() {
-        assertEquals(5.83, AggregationMethods.gpaMeanByCourse(myCourseGrades),0);
+        assertEquals(11.23, AggregationMethods.gpaMeanByCourse(myCourseGrades),0.01);
     }
 }
