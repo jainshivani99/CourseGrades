@@ -3,48 +3,68 @@ import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Arrays;
 
 public class FilteringMethodsTest {
 
+    private static final String COURSE_JSON = Data.getFileContentsAsString("Fall2013Test.json");
     private ArrayList<CourseGrades> myCourseGrades = new ArrayList<CourseGrades>();
 
     @Before
     public void setUp() throws Exception {
-        String courseJson = Data.getFileContentsAsString("Fall2013");
         Gson gson = new Gson();
-        CourseGrades currentCourse = gson.fromJson(courseJson, CourseGrades[].class);
-        myCourseGrades.add(currentCourse);
+        CourseGrades[] courseObject = gson.fromJson(COURSE_JSON, CourseGrades[].class);
+        myCourseGrades = new ArrayList<CourseGrades>(Arrays.asList(courseObject));
     }
 
     @Test
-    public void getCoursesFromSubject() {
-        ArrayList<CourseGrades> expectedResult = {}
-        assertEquals()
+    public void testGetCoursesFromSubject() {
+        ArrayList<CourseGrades> expectedResult = new ArrayList<CourseGrades>();
+        Collections.addAll(expectedResult, myCourseGrades.get(0), myCourseGrades.get(1));
+        assertEquals(expectedResult, FilteringMethods.getCoursesFromSubject(myCourseGrades, "AAS"));
     }
 
     @Test
-    public void getCoursesFromInstructor() {
-        assertEquals()
+    public void testGetCoursesFromInstructor() {
+        ArrayList<CourseGrades> expectedResult = new ArrayList<CourseGrades>();
+        Collections.addAll(expectedResult, myCourseGrades.get(0), myCourseGrades.get(1));
+        assertEquals(expectedResult, FilteringMethods.getCoursesFromInstructor(myCourseGrades, "Arai, Sayuri"));
     }
 
     @Test
-    public void getCoursesFromNumber() {
-        assertEquals()
+    public void testGetCoursesFromInstructorFragment() {
+        ArrayList<CourseGrades> expectedResult = new ArrayList<CourseGrades>();
+        Collections.addAll(expectedResult, myCourseGrades.get(0), myCourseGrades.get(1));
+        assertEquals(expectedResult, FilteringMethods.getCoursesFromInstructor(myCourseGrades, "ayuri"));
     }
 
     @Test
-    public void getCoursesFromStudents() {
-        assertEquals()
+    public void testGetCoursesFromNumber() {
+        ArrayList<CourseGrades> expectedResult = new ArrayList<CourseGrades>();
+        Collections.addAll(expectedResult, myCourseGrades.get(0), myCourseGrades.get(1), myCourseGrades.get(3));
+        assertEquals(expectedResult, FilteringMethods.getCoursesFromNumber(myCourseGrades, 100,200));
     }
 
     @Test
-    public void getCoursesFromType() {
-        assertEquals()
+    public void testGetCoursesFromStudents() {
+        ArrayList<CourseGrades> expectedResult = new ArrayList<CourseGrades>();
+        Collections.addAll(expectedResult, myCourseGrades.get(0), myCourseGrades.get(1) ,myCourseGrades.get(2),myCourseGrades.get(3));
+        assertEquals(expectedResult, FilteringMethods.getCoursesFromStudents(myCourseGrades, 2, 15));
     }
 
     @Test
-    public void getCoursesFromSection() {
-        assertEquals()
+    public void testGetCoursesFromType() {
+        ArrayList<CourseGrades> expectedResult = new ArrayList<CourseGrades>();
+        Collections.addAll(expectedResult, myCourseGrades.get(2), myCourseGrades.get(3));
+        assertEquals(expectedResult, FilteringMethods.getCoursesFromType(myCourseGrades, "LCD"));
+    }
+
+    @Test
+    public void testGetCoursesFromSection() {
+        ArrayList<CourseGrades> expectedResult = new ArrayList<CourseGrades>();
+        Collections.addAll(expectedResult, myCourseGrades.get(1));
+        assertEquals(expectedResult, FilteringMethods.getCoursesFromSection(myCourseGrades, "AD2"));
     }
 
 }

@@ -7,17 +7,17 @@ import static org.junit.Assert.assertEquals;
 
 public class AggregationMethodsTest {
 
+    private static final String COURSE_JSON = Data.getFileContentsAsString("Fall2013Test.json");
     private ArrayList<CourseGrades> myCourseGrades = new ArrayList<CourseGrades>();
 
     @Before
     public void setUp() throws Exception {
-        String courseJson = Data.getFileContentsAsString("Fall2013");
         Gson gson = new Gson();
-        CourseGrades currentCourse = gson.fromJson(courseJson, CourseGrades[].class);
-        myCourseGrades.add(currentCourse);
+        CourseGrades courseObject = gson.fromJson(COURSE_JSON, CourseGrades.class);
+        myCourseGrades.add(courseObject);
     }
 
-    @Test
+/**    @Test
     public void numStudentsInClasses() {
         assertEquals()
     }
@@ -30,5 +30,5 @@ public class AggregationMethodsTest {
     @Test
     public void gpaMeanByCourse() {
         assertEquals()
-    }
+    }*/
 }
