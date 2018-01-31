@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Arrays;
 
+/** A class that tests the functionality of the FilteringMethods class */
 public class FilteringMethodsTest {
 
     private static final String COURSE_JSON = Data.getFileContentsAsString("Fall2013Test.json");
@@ -18,6 +19,7 @@ public class FilteringMethodsTest {
         myCourseGrades = new ArrayList<CourseGrades>(Arrays.asList(courseObject));
     }
 
+    //Tests an array list of course grade objects for the given subject
     @Test
     public void testGetCoursesFromSubject() {
         ArrayList<CourseGrades> expectedResult = new ArrayList<CourseGrades>();
@@ -25,6 +27,7 @@ public class FilteringMethodsTest {
         assertEquals(expectedResult, FilteringMethods.getCoursesFromSubject(myCourseGrades, "AAS"));
     }
 
+    //Tests an array list of course grade objects for the given instructor
     @Test
     public void testGetCoursesFromInstructor() {
         ArrayList<CourseGrades> expectedResult = new ArrayList<CourseGrades>();
@@ -32,6 +35,7 @@ public class FilteringMethodsTest {
         assertEquals(expectedResult, FilteringMethods.getCoursesFromInstructor(myCourseGrades, "Arai, Sayuri"));
     }
 
+    //Tests an array list of course grade objects for the given instructor fragment
     @Test
     public void testGetCoursesFromInstructorFragment() {
         ArrayList<CourseGrades> expectedResult = new ArrayList<CourseGrades>();
@@ -39,6 +43,7 @@ public class FilteringMethodsTest {
         assertEquals(expectedResult, FilteringMethods.getCoursesFromInstructor(myCourseGrades, "ayuri"));
     }
 
+    //Tests an array list of course grade objects for the given range of course numbers
     @Test
     public void testGetCoursesFromNumber() {
         ArrayList<CourseGrades> expectedResult = new ArrayList<CourseGrades>();
@@ -46,6 +51,7 @@ public class FilteringMethodsTest {
         assertEquals(expectedResult, FilteringMethods.getCoursesFromNumber(myCourseGrades, 100,200));
     }
 
+    //Tests an array list of course grade objects for the given range of students
     @Test
     public void testGetCoursesFromStudents() {
         ArrayList<CourseGrades> expectedResult = new ArrayList<CourseGrades>();
@@ -53,6 +59,7 @@ public class FilteringMethodsTest {
         assertEquals(expectedResult, FilteringMethods.getCoursesFromStudents(myCourseGrades, 2, 15));
     }
 
+    //Tests an array list of course grade objects for the given type
     @Test
     public void testGetCoursesFromType() {
         ArrayList<CourseGrades> expectedResult = new ArrayList<CourseGrades>();
@@ -60,6 +67,7 @@ public class FilteringMethodsTest {
         assertEquals(expectedResult, FilteringMethods.getCoursesFromType(myCourseGrades, "LCD"));
     }
 
+    //Tests an array list of course grade objects for the given section
     @Test
     public void testGetCoursesFromSection() {
         ArrayList<CourseGrades> expectedResult = new ArrayList<CourseGrades>();
